@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */; };
-		F2CBFED2225CA1DE00CCB693 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFED1225CA1DE00CCB693 /* ViewController.swift */; };
 		F2CBFED5225CA1DE00CCB693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED3225CA1DE00CCB693 /* Main.storyboard */; };
 		F2CBFED7225CA1DF00CCB693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED6225CA1DF00CCB693 /* Assets.xcassets */; };
 		F2CBFEDA225CA1DF00CCB693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED8225CA1DF00CCB693 /* LaunchScreen.storyboard */; };
+		F2CBFEE3225CA52800CCB693 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE2225CA52800CCB693 /* MainViewController.swift */; };
+		F2CBFEE8225CA9B600CCB693 /* ImagesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE7225CA9B600CCB693 /* ImagesEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F2CBFECC225CA1DE00CCB693 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2CBFED1225CA1DE00CCB693 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F2CBFED4225CA1DE00CCB693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2CBFED6225CA1DF00CCB693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2CBFED9225CA1DF00CCB693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2CBFEDB225CA1DF00CCB693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CBFEE2225CA52800CCB693 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F2CBFEE7225CA9B600CCB693 /* ImagesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		F2CBFECE225CA1DE00CCB693 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				F2CBFEE6225CA98E00CCB693 /* Models */,
+				F2CBFEE1225CA51200CCB693 /* Controllers */,
 				F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */,
-				F2CBFED1225CA1DE00CCB693 /* ViewController.swift */,
 				F2CBFED3225CA1DE00CCB693 /* Main.storyboard */,
 				F2CBFED6225CA1DF00CCB693 /* Assets.xcassets */,
 				F2CBFED8225CA1DF00CCB693 /* LaunchScreen.storyboard */,
 				F2CBFEDB225CA1DF00CCB693 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		F2CBFEE1225CA51200CCB693 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2CBFEE2225CA52800CCB693 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F2CBFEE6225CA98E00CCB693 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2CBFEE7225CA9B600CCB693 /* ImagesEnum.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2CBFED2225CA1DE00CCB693 /* ViewController.swift in Sources */,
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
+				F2CBFEE8225CA9B600CCB693 /* ImagesEnum.swift in Sources */,
+				F2CBFEE3225CA52800CCB693 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
