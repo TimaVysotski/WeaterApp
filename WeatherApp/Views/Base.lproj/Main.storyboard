@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oSK-iy-XF0">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,9 +15,36 @@
             <objects>
                 <viewController storyboardIdentifier="CurrnetWeatherViewController" id="BYZ-38-t0r" customClass="CurrnetWeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV5-2U-nZP">
+                                <rect key="frame" x="92" y="118" width="191" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="XbY-c3-Ivx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uv-Uw-sQP">
+                                <rect key="frame" x="124" y="322" width="127" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="1mV-qE-Uxp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6uv-Uw-sQP" secondAttribute="trailing" constant="124" id="1xw-xU-7c4"/>
+                            <constraint firstItem="zV5-2U-nZP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="MJU-TQ-sZM"/>
+                            <constraint firstItem="6uv-Uw-sQP" firstAttribute="top" secondItem="zV5-2U-nZP" secondAttribute="bottom" constant="149" id="NLR-3Y-0eL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zV5-2U-nZP" secondAttribute="trailing" constant="92" id="Q4F-hI-6qN"/>
+                            <constraint firstItem="zV5-2U-nZP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="WJH-wx-Sgd"/>
+                            <constraint firstItem="6uv-Uw-sQP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="dld-uH-hqV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="oxW-4d-Ebc">
@@ -28,19 +55,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cityTextLabel" destination="zV5-2U-nZP" id="sfG-T0-WlK"/>
                         <outlet property="navigationBar" destination="oxW-4d-Ebc" id="5CE-Zb-XPz"/>
+                        <outlet property="temperatureScaleTextLabel" destination="6uv-Uw-sQP" id="GGD-my-bfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="46"/>
+            <point key="canvasLocation" x="44.927536231884062" y="45.535714285714285"/>
         </scene>
         <!--Cities View Controller-->
         <scene sceneID="Kjx-fB-3MX">
             <objects>
                 <viewController storyboardIdentifier="CitiesViewController" id="SgO-63-0vz" customClass="CitiesViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrh-VZ-LfX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W7r-YG-8aC"/>
@@ -55,14 +84,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22J-Dr-zV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="46"/>
+            <point key="canvasLocation" x="765.60000000000002" y="45.812807881773402"/>
         </scene>
         <!--Serch View Controller-->
         <scene sceneID="gns-sP-XMV">
             <objects>
                 <viewController storyboardIdentifier="SerchViewController" id="lRZ-XS-8wv" customClass="SerchViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8gL-EA-uXl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VPN-GA-Gjg"/>
@@ -78,7 +107,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oSK-iy-XF0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6ps-rh-5o5">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
