@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension UIImage {
     enum Images : String{
         case lightBackground = "LightBackground"
