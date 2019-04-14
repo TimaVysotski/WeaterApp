@@ -1,4 +1,6 @@
 import UIKit
+import CoreData
+
 
 class CurrnetWeatherViewController : UIViewController {
    
@@ -7,7 +9,9 @@ class CurrnetWeatherViewController : UIViewController {
     @IBOutlet weak var cityTextLabel: UILabel!
     @IBOutlet weak var temperatureTextLabel: UILabel!
     @IBOutlet weak var temperatureScaleTextLabel: UILabel!
-   
+    
+    var container: NSPersistentContainer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBackGroundView()

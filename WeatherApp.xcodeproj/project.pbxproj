@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F270987A225E653D009634B4 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2709879225E653D009634B4 /* NavigationBarExtension.swift */; };
+		F2B510E4225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2B510E2225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld */; };
 		F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */; };
 		F2CBFED5225CA1DE00CCB693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED3225CA1DE00CCB693 /* Main.storyboard */; };
 		F2CBFED7225CA1DF00CCB693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED6225CA1DF00CCB693 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		EA63221862BEE47C42DED351 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F2709879225E653D009634B4 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
+		F2B510E3225F46E3008A7A19 /* WeatherAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherAppModel.xcdatamodel; sourceTree = "<group>"; };
 		F2CBFECC225CA1DE00CCB693 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2CBFED4225CA1DE00CCB693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,13 @@
 			path = "Views/New Group";
 			sourceTree = "<group>";
 		};
+		F2709880225E69E1009634B4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		F2CBFEC3225CA1DE00CCB693 = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +103,11 @@
 		F2CBFECE225CA1DE00CCB693 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				F2B510E2225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld */,
 				F22BAFE8225D30B60004F4A6 /* Views */,
 				F2CBFEE1225CA51200CCB693 /* Controllers */,
 				F2CBFEE6225CA98E00CCB693 /* Models */,
+				F2709880225E69E1009634B4 /* Data */,
 				F2CBFEED225CC4AF00CCB693 /* Extension */,
 				F2709878225E64E1009634B4 /* New Group */,
 				F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */,
@@ -242,12 +253,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WeatherApp/Pods-WeatherApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -263,6 +278,7 @@
 			files = (
 				F270987A225E653D009634B4 /* NavigationBarExtension.swift in Sources */,
 				F2CBFEEC225CBD9900CCB693 /* SearchViewController.swift in Sources */,
+				F2B510E4225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld in Sources */,
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
 				F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */,
 				F2CBFEE8225CA9B600CCB693 /* ImagesExtension.swift in Sources */,
@@ -468,6 +484,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2B510E2225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2B510E3225F46E3008A7A19 /* WeatherAppModel.xcdatamodel */,
+			);
+			currentVersion = F2B510E3225F46E3008A7A19 /* WeatherAppModel.xcdatamodel */;
+			path = WeatherAppModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F2CBFEC4225CA1DE00CCB693 /* Project object */;
 }
