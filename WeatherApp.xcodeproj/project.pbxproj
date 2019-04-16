@@ -17,6 +17,7 @@
 		F2CBFEE8225CA9B600CCB693 /* ImagesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE7225CA9B600CCB693 /* ImagesExtension.swift */; };
 		F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */; };
 		F2CBFEEC225CBD9900CCB693 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEEB225CBD9900CCB693 /* SearchViewController.swift */; };
+		F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F53C122264E7310057958F /* WeatherJSON.swift */; };
 		FB85350290C3F140F8C5FAA8 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4F3B5A895F2B76B890038 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		F2CBFEE7225CA9B600CCB693 /* ImagesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesExtension.swift; sourceTree = "<group>"; };
 		F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		F2CBFEEB225CBD9900CCB693 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F2F53C122264E7310057958F /* WeatherJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherJSON.swift; sourceTree = "<group>"; };
 		F90C8DFA1861BAAC2B9345EE /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FBE4F3B5A895F2B76B890038 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 		F2CBFEE6225CA98E00CCB693 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F2F53C122264E7310057958F /* WeatherJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
 				F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */,
 				F2CBFEE8225CA9B600CCB693 /* ImagesExtension.swift in Sources */,
+				F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */,
 				F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

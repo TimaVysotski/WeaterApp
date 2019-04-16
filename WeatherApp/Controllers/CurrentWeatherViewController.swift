@@ -2,7 +2,6 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
-import NVActivityIndicatorView
 import CoreLocation
 
 
@@ -16,7 +15,6 @@ class CurrnetWeatherViewController : UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var iconNameLabel: UILabel!
     
-    var activityIndicator: NVActivityIndicatorView!
     var cityName = "Minsk"
     
     let locationManager = CLLocationManager()
@@ -28,38 +26,27 @@ class CurrnetWeatherViewController : UIViewController, CLLocationManagerDelegate
         setUpBackGroundView()
         escapeNavigationBar()
         
-        let indicatorSize: CGFloat = 70
-        let indicatorFrame = CGRect(x: (view.frame.width - indicatorSize/2), y: (view.frame.height - indicatorSize/2), width: indicatorSize, height: indicatorSize)
-        activityIndicator = NVActivityIndicatorView(frame: indicatorFrame, type: .lineScale, color: UIColor.white, padding: 20.0)
-        activityIndicator.backgroundColor = UIColor.black
-        view.addSubview(activityIndicator)
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        activityIndicator.startAnimating()
-        if(CLLocationManager.locationServicesEnabled()){
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
+        startingLocationManager()
         
     }
     
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     Alamofire.request("https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&units=metric&appid=\(apiKey)").responseJSON {
-        
+
         response in
-        self.activityIndicator.stopAnimating()
+        
         if let responseStr = response.result.value{
             let jsonResponse = JSON(responseStr)
+            print(jsonResponse)
             let jsonWeather = jsonResponse["weather"].array![0]
             let jsonTemp = jsonResponse["main"]
             let iconName = jsonWeather["icon"].stringValue
-            
+
             self.locationLabel.text = jsonResponse["name"].stringValue
-            self.conditionImageView.image = UIImage(named: "01d")
-            self.conditionLabal.text = jsonWeather["description"].stringValue
+            self.conditionImageView.image = UIImage(named: iconName)
+            self.conditionLabal.text = jsonWeather["main"].stringValue
             self.temperatureLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))°C"
         }
         }
@@ -76,6 +63,11 @@ extension UIViewController {
 
 extension CurrnetWeatherViewController {
     func startingLocationManager(){
-        
+        locationManager.requestWhenInUseAuthorization()
+        if(CLLocationManager.locationServicesEnabled()){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
 }
