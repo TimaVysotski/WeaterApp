@@ -17,7 +17,6 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpBackGroundView()
         escapeNavigationBar()
         
         
@@ -63,12 +62,7 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
 //
 }
 
-extension UIViewController {
-    func setUpBackGroundView(){
-        let backGroundImage : UIImage =  UIImage(image: .lightBackground)
-        return self.view.layer.contents = backGroundImage.cgImage
-    }
-}
+
 
 //extension CurrnetWeatherViewController {
 //    func startingLocationManager(){
