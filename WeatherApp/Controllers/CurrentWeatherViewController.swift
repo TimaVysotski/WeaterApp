@@ -14,6 +14,7 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
     
     //let locationManager = CLLocationManager()
     let coordinate:(lat: Double, lon: Double) = (53.9023,27.5619)
+    var cityName = "Minsk"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,9 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
         
         
         
-        ForecastService.shared.getCurrentWeather(latitude: coordinate.lat, longitude: coordinate.lon){ [weak self] text in
+        ForecastService.shared.getCurrentWeather(name : cityName){ [weak self] text in
             DispatchQueue.main.async {
-                
+                self?.temperatureLabel.text = text["temperature"]
                 print(text)
             }
         

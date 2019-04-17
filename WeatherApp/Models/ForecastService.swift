@@ -10,16 +10,20 @@ class ForecastService {
     var forecastBaseURL = "https://api.openweathermap.org/data/2.5/weather?lang=en&units=metric&appid="
     
     
-    func getCurrentWeather(latitude : Double, longitude : Double, completion : @escaping (_ resault : String) -> () ){
+    func getCurrentWeather(name : String, completion : @escaping (_ resault : [String : String]) -> () ){
         
-        if let forecastURL = URL(string: "\(forecastBaseURL)\(forecastAPIKey)&lat=\(latitude)&lon=\(longitude)"){
+        if let forecastURL = URL(string: "\(forecastBaseURL)\(forecastAPIKey)&q=\(name)"){
             Alamofire.request(forecastURL).responseJSON(completionHandler: {(response) in
                 DispatchQueue.global().async() {
                     if let responseStr = response.result.value{
+                        var currentWeather : [String : String] = [:]
                         let jsonResponse = JSON(responseStr)
                         let location = jsonResponse["name"].stringValue
+                        currentWeather["location"] = location
+                        let temperature = "\(jsonResponse["main"]["temp"].stringValue)°C"
+                        currentWeather["temperature"] = temperature
                         print(jsonResponse)
-                        completion(location)
+                        completion(currentWeather)
                     } 
               }
                 
