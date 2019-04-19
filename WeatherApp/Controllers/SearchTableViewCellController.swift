@@ -4,6 +4,7 @@ class SearchTableViewCellController : UITableViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
