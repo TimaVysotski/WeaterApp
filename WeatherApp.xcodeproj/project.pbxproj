@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F230E48B226A1EE600AFEFAA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230E48A226A1EE600AFEFAA /* SearchViewController.swift */; };
+		F23B0CF8226A1A4C00560B2B /* SearchTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23B0CF7226A1A4C00560B2B /* SearchTableViewCellController.swift */; };
+		F249CB86226A382E00CFDE10 /* File.json in Resources */ = {isa = PBXBuildFile; fileRef = F249CB85226A382E00CFDE10 /* File.json */; };
 		F270987A225E653D009634B4 /* NavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2709879225E653D009634B4 /* NavigationBarExtension.swift */; };
 		F2B510E4225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2B510E2225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld */; };
 		F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */; };
@@ -15,7 +18,6 @@
 		F2CBFEDA225CA1DF00CCB693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED8225CA1DF00CCB693 /* LaunchScreen.storyboard */; };
 		F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */; };
 		F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */; };
-		F2CBFEEC225CBD9900CCB693 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEEB225CBD9900CCB693 /* SearchViewController.swift */; };
 		F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E698A12266123600CBDBEF /* ForecastService.swift */; };
 		F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F53C122264E7310057958F /* WeatherJSON.swift */; };
 		FB85350290C3F140F8C5FAA8 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4F3B5A895F2B76B890038 /* Pods_WeatherApp.framework */; };
@@ -23,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		EA63221862BEE47C42DED351 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F230E48A226A1EE600AFEFAA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F23B0CF7226A1A4C00560B2B /* SearchTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellController.swift; sourceTree = "<group>"; };
+		F249CB85226A382E00CFDE10 /* File.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = File.json; sourceTree = "<group>"; };
 		F2709879225E653D009634B4 /* NavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtension.swift; sourceTree = "<group>"; };
 		F2B510E3225F46E3008A7A19 /* WeatherAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherAppModel.xcdatamodel; sourceTree = "<group>"; };
 		F2CBFECC225CA1DE00CCB693 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +38,6 @@
 		F2CBFEDB225CA1DF00CCB693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
-		F2CBFEEB225CBD9900CCB693 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F2E698A12266123600CBDBEF /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		F2F53C122264E7310057958F /* WeatherJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherJSON.swift; sourceTree = "<group>"; };
 		F90C8DFA1861BAAC2B9345EE /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +73,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F24DE0AF226631F000AEA437 /* New Group */ = {
+		F249CB84226A381A00CFDE10 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				F249CB85226A382E00CFDE10 /* File.json */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 		F2CBFECE225CA1DE00CCB693 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				F249CB84226A381A00CFDE10 /* New Group */,
 				F2B510E2225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld */,
 				F22BAFE8225D30B60004F4A6 /* View */,
 				F2CBFEE1225CA51200CCB693 /* Controllers */,
@@ -123,7 +129,8 @@
 			children = (
 				F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */,
 				F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */,
-				F2CBFEEB225CBD9900CCB693 /* SearchViewController.swift */,
+				F230E48A226A1EE600AFEFAA /* SearchViewController.swift */,
+				F23B0CF7226A1A4C00560B2B /* SearchTableViewCellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				F2709879225E653D009634B4 /* NavigationBarExtension.swift */,
-				F24DE0AF226631F000AEA437 /* New Group */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				TargetAttributes = {
 					F2CBFECB225CA1DE00CCB693 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -215,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2CBFEDA225CA1DF00CCB693 /* LaunchScreen.storyboard in Resources */,
+				F249CB86226A382E00CFDE10 /* File.json in Resources */,
 				F2CBFED7225CA1DF00CCB693 /* Assets.xcassets in Resources */,
 				F2CBFED5225CA1DE00CCB693 /* Main.storyboard in Resources */,
 			);
@@ -279,12 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F270987A225E653D009634B4 /* NavigationBarExtension.swift in Sources */,
-				F2CBFEEC225CBD9900CCB693 /* SearchViewController.swift in Sources */,
 				F2B510E4225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld in Sources */,
 				F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */,
+				F230E48B226A1EE600AFEFAA /* SearchViewController.swift in Sources */,
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
 				F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */,
 				F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */,
+				F23B0CF8226A1A4C00560B2B /* SearchTableViewCellController.swift in Sources */,
 				F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = timan.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -460,7 +469,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = timan.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,8 +8,6 @@ import CoreLocation
 class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
    
     @IBOutlet weak var navigationBar: UINavigationItem!
-    @IBOutlet weak var locationScrollView: UIScrollView!
-    @IBOutlet weak var pagesController: UIPageControl!
     @IBOutlet weak var temperatureLabel: UILabel!
     
     //let locationManager = CLLocationManager()
@@ -23,11 +21,9 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
         
         
         
-        
         ForecastService.shared.getCurrentWeather(name : cityName){ [weak self] text in
             DispatchQueue.main.async {
-                self?.temperatureLabel.text = text["temperature"]
-                print(text)
+                self?.temperatureLabel.text = text
             }
         
         }
