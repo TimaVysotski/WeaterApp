@@ -73,6 +73,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F2389713226B84FB00339B28 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */,
+				F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */,
+				F230E48A226A1EE600AFEFAA /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F249CB84226A381A00CFDE10 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +137,7 @@
 		F2CBFEE1225CA51200CCB693 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */,
-				F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */,
-				F230E48A226A1EE600AFEFAA /* SearchViewController.swift */,
+				F2389713226B84FB00339B28 /* ViewControllers */,
 				F23B0CF7226A1A4C00560B2B /* SearchTableViewCellController.swift */,
 			);
 			path = Controllers;
