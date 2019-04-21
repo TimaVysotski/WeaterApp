@@ -7,6 +7,7 @@ import CoreLocation
 
 class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -27,6 +28,8 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
             DispatchQueue.main.async {
                 self?.temperatureLabel.text = text
                 self?.imageView.image = UIImage(named: text)
+                let backgroundImage = UIImage(named: "\(text)b")
+                self?.view.layer.contents = backgroundImage?.cgImage
             }
         }
         
