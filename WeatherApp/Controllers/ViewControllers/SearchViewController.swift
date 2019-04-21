@@ -14,6 +14,7 @@ class SearchViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         readCityList()
+        searchBar.becomeFirstResponder()
     }
 
     func readCityList(){
@@ -24,7 +25,6 @@ class SearchViewController : UIViewController{
         }
     }
 }
-
 
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,9 +59,3 @@ extension SearchViewController : UISearchBarDelegate{
         }
     }
 }
-
-//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//    requiredCity = cityList.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
-//    cityIsFound = true
-//    tableView.reloadData()
-//}

@@ -24,7 +24,7 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
         
         
         
-        ForecastService.shared.getCurrentWeather(coordinate.lat, coordinate.lon){ [weak self] text in
+        ForecastService.shared.getCurrentWeather(cityName){ [weak self] text in
             DispatchQueue.main.async {
                 self?.temperatureLabel.text = text
                 self?.imageView.image = UIImage(named: text)
