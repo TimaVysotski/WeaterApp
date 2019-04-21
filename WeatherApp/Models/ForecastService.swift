@@ -19,7 +19,7 @@ class ForecastService {
                         let jsonResponse = JSON(responseStr)
                         let iconName = jsonResponse["weather"].array![0]["icon"].stringValue
                        // let location = jsonResponse["name"].stringValue
-                        print(jsonResponse)
+                       //print(jsonResponse)
                         completion(iconName)
                     } else {
                         print("Error")
@@ -29,6 +29,34 @@ class ForecastService {
             })
         }
         
+    }
+    
+    func getCurrentCity(completion : @escaping (_ resault : [String]) -> ()){
+        DispatchQueue.global().async {
+            var cityList = [String]()
+            if let path = Bundle.main.path(forResource: "cityList", ofType: "txt"){
+                if let text = try? String(contentsOfFile: path){
+                    cityList = text.components(separatedBy: "\n")
+                }
+                print(cityList[0])
+                completion(cityList)
+            } else {
+                print("erorr")
+            }
+            
+        }
+    }
+    
+    func getCityPrefix(_ cities : [String],_ text : String, completion : @escaping (_ resault : [String]) -> ()){
+        DispatchQueue.global().async {
+            var requiredCities : [String] = []
+            if text == ""{
+                completion(requiredCities)
+            } else {
+                requiredCities = cities.filter({$0.lowercased().prefix(text.count) == text.lowercased()})
+                completion(requiredCities)
+            }
+        }
     }
     
 }

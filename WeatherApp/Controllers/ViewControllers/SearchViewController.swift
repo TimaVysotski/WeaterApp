@@ -6,13 +6,22 @@ class SearchViewController : UIViewController{
     @IBOutlet weak var searchBar: UISearchBar!
 
     
-    private var city : [String] = ["Minsk", "Moscow", "London"]
+    private var cityList = [String]()
     private var requiredCity = [String]()
     private var cityIsFound = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        readCityList()
+    }
+
+    func readCityList(){
+        ForecastService.shared.getCurrentCity(){ [weak self] cities in
+            DispatchQueue.main.async {
+                self?.cityList = cities
+            }
+        }
     }
 }
 
@@ -22,7 +31,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         if cityIsFound{
             return requiredCity.count
         } else {
-            return city.count
+            return cityList.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +41,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         if cityIsFound{
             cell.setUpCell(city: requiredCity[indexPath.row])
         } else {
-            cell.setUpCell(city: city[indexPath.row])
+            cell.setUpCell(city: cityList[indexPath.row])
         }
     return cell
     }
@@ -41,10 +50,18 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        requiredCity = city.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
-        cityIsFound = true
-        tableView.reloadData()
+        ForecastService.shared.getCityPrefix(cityList, searchText){  [weak self] foundCities in
+            DispatchQueue.main.async {
+                 self?.requiredCity = foundCities
+                 self?.cityIsFound = true
+                 self?.tableView.reloadData()
+            }
+        }
     }
-
 }
 
+//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//    requiredCity = cityList.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+//    cityIsFound = true
+//    tableView.reloadData()
+//}
