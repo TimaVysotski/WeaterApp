@@ -58,4 +58,8 @@ extension SearchViewController : UISearchBarDelegate{
             }
         }
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        self.dismiss(animated: true, completion: nil)
+    }
 }

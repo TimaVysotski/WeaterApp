@@ -5,25 +5,26 @@ import SwiftyJSON
 import CoreLocation
 
 
-class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
+class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, UIScrollViewDelegate, CLLocationManagerDelegate{
    
-    @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     
     //let locationManager = CLLocationManager()
+    
     let coordinate:(lat: Double, lon: Double) = (53.9167,27.55)
     var cityName = "Minsk"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.delegate = self
         escapeNavigationBar()
-        
-        
-        
-        
+        forecastWeather()
+        // startingLocationManager()
+    }
+    func forecastWeather(){
         ForecastService.shared.getCurrentWeather(cityName){ [weak self] text in
             DispatchQueue.main.async {
                 self?.temperatureLabel.text = text
@@ -32,15 +33,39 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
                 self?.view.layer.contents = backgroundImage?.cgImage
             }
         }
-        
-        
-        
-        // startingLocationManager()
     }
     
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
+        self.present(controller, animated: true, completion: nil)
+    }
     
-    
-    
+}
+
+extension CurrnetWeatherViewController {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return UIBarPosition.topAttached
+    }
+    func escapeNavigationBar(){
+        self.navigationBar.setBackgroundImage(UIImage(), for:
+            UIBarMetrics.default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.isTranslucent = true
+        self.navigationBar.backgroundColor = UIColor.clear
+    }
+}
+
+
+//extension CurrnetWeatherViewController {
+//    func startingLocationManager(){
+//        locationManager.requestWhenInUseAuthorization()
+//        if(CLLocationManager.locationServicesEnabled()){
+//            locationManager.delegate = self
+//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//            locationManager.startUpdatingLocation()
+//        }
+//    }
+//}
 //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //    Alamofire.request("https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&units=metric&appid=\(apiKey)").responseJSON {
 //
@@ -62,17 +87,3 @@ class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate, CLL
 //        }
 //    }
 //
-}
-
-
-
-//extension CurrnetWeatherViewController {
-//    func startingLocationManager(){
-//        locationManager.requestWhenInUseAuthorization()
-//        if(CLLocationManager.locationServicesEnabled()){
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//            locationManager.startUpdatingLocation()
-//        }
-//    }
-//}
