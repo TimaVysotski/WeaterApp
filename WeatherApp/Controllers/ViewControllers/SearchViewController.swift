@@ -1,5 +1,10 @@
 import UIKit
 
+protocol SearchViewControllerDelegate : AnyObject{
+    func addCity(_ city : String)
+}
+
+
 class SearchViewController : UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
@@ -10,6 +15,7 @@ class SearchViewController : UIViewController{
     private var requiredCity = [String]()
     private var cityIsFound = false
     
+    weak var delegate : SearchViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +50,12 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
             cell.setUpCell(city: cityList[indexPath.row])
         }
     return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.addCity(requiredCity[indexPath.row])
+        print(requiredCity[indexPath.row])
+        self.view.endEditing(true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

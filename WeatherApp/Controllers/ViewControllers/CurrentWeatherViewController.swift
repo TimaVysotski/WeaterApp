@@ -8,27 +8,41 @@ import CoreLocation
 class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, UIScrollViewDelegate, CLLocationManagerDelegate{
    
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+
     
     //let locationManager = CLLocationManager()
     
     let coordinate:(lat: Double, lon: Double) = (53.9167,27.55)
     var cityName = "Minsk"
+    var cities : [String] = ["Minsk", "Poland", "Moscow"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.delegate = self
+        setupScrollView()
         escapeNavigationBar()
-        forecastWeather()
+        //forecastWeather()
         // startingLocationManager()
     }
+    
+    func setupScrollView(){
+        for index in 0..<cities.count{
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "0\(index + 1)db")
+            let xPosition = self.view.frame.width * CGFloat(index)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+
+            scrollView.contentSize.width = self.view.frame.width * CGFloat(cities.count)
+            scrollView.addSubview(imageView)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "0\(index + 1)db")!)
+        }
+    }
+    
     func forecastWeather(){
         ForecastService.shared.getCurrentWeather(cityName){ [weak self] text in
             DispatchQueue.main.async {
-                self?.temperatureLabel.text = text
-                self?.imageView.image = UIImage(named: text)
                 let backgroundImage = UIImage(named: "\(text)b")
                 self?.view.layer.contents = backgroundImage?.cgImage
             }
