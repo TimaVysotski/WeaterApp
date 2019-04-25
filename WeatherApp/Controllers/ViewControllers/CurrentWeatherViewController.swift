@@ -2,42 +2,20 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
-import CoreLocation
 
 
-class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, UIScrollViewDelegate, CLLocationManagerDelegate{
+
+class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
    
+    
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-
-    
-    //let locationManager = CLLocationManager()
-    
-    let coordinate:(lat: Double, lon: Double) = (53.9167,27.55)
-    var cityName = "Minsk"
-    var cities : [String] = ["Minsk", "Poland", "Moscow"]
+    @IBOutlet weak var horizontalCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.delegate = self
-        setupScrollView()
-        escapeNavigationBar()
-        // startingLocationManager()
     }
     
-    func setupScrollView(){
-        for index in 0..<cities.count{
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: "0\(index + 1)db")
-            let xPosition = self.view.frame.width * CGFloat(index)
-            imageView.frame = CGRect(x: xPosition, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
-
-            scrollView.contentSize.width = self.view.frame.width * CGFloat(cities.count)
-            scrollView.addSubview(imageView)
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "0\(index + 1)db")!)
-        }
-    }
     
     @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
@@ -48,6 +26,7 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
 
 extension CurrnetWeatherViewController {
     func position(for bar: UIBarPositioning) -> UIBarPosition {
+        escapeNavigationBar()
         return UIBarPosition.topAttached
     }
     func escapeNavigationBar(){
@@ -58,6 +37,47 @@ extension CurrnetWeatherViewController {
         self.navigationBar.backgroundColor = UIColor.clear
     }
 }
+
+extension CurrnetWeatherViewController : UICollectionViewDataSource {
+    func setUpHorizontalCollectionView(){
+        horizontalCollectionView.frame = view.frame
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
+        cell.setUpCell(cell)
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //extension CurrnetWeatherViewController {
