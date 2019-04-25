@@ -3,7 +3,7 @@ import CoreData
 import Alamofire
 import SwiftyJSON
 
-
+var cities = [City]()
 
 class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
    
@@ -12,8 +12,15 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRequest()
+        horizontalCollectionView.reloadData()
     }
     
     
@@ -21,7 +28,6 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
         self.present(controller, animated: true, completion: nil)
     }
-    
 }
 
 extension CurrnetWeatherViewController {
@@ -39,21 +45,38 @@ extension CurrnetWeatherViewController {
 }
 
 extension CurrnetWeatherViewController : UICollectionViewDataSource {
-    func setUpHorizontalCollectionView(){
-        horizontalCollectionView.frame = view.frame
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height + 35
+        return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
-        cell.setUpCell(cell)
+        let city = cities[indexPath.row]
+        cell.setUpCell(city)
         return cell
     }
+}
+
+extension UIViewController {
+    func fetchRequest(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            let resault = try context.fetch(City.fetchRequest())
+            cities = resault as! [City]
+        } catch let error as NSError {
+            print("Could not save\(error), \(error.userInfo)")
+        }
+    }
+    
 }
 
 

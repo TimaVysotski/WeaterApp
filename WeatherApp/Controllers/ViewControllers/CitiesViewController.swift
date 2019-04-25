@@ -1,18 +1,16 @@
 import UIKit
 import CoreData
 
+
 class CitiesViewController : UIViewController, UINavigationBarDelegate{
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
    
-    var cities = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.delegate = self
-        escapeNavigationBar()
-        
+        self.tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +36,7 @@ class CitiesViewController : UIViewController, UINavigationBarDelegate{
 
 extension CitiesViewController {
     func position(for bar: UIBarPositioning) -> UIBarPosition {
+        escapeNavigationBar()
         return UIBarPosition.topAttached
     }
     func escapeNavigationBar(){
@@ -52,7 +51,9 @@ extension CitiesViewController {
 
 
 extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate{
-    
+    func separateLine(){
+        self.tableView.separatorStyle = .none
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
     }
@@ -104,16 +105,16 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
         }
     }
     
-    func fetchRequest(){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        do {
-            let resault = try context.fetch(City.fetchRequest())
-            cities = resault as! [City]
-        } catch let error as NSError {
-            print("Could not save\(error), \(error.userInfo)")
-        }
-    }
+//    func fetchRequest(){
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        do {
+//            let resault = try context.fetch(City.fetchRequest())
+//            cities = resault as! [City]
+//        } catch let error as NSError {
+//            print("Could not save\(error), \(error.userInfo)")
+//        }
+//    }
     
     func saveCurrentCity(_ city : City,_ cityWeather : [String : String]){
         city.setValue(cityWeather[Weather.location], forKey: Weather.location)

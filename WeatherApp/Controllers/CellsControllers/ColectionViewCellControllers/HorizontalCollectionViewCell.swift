@@ -1,9 +1,15 @@
 import UIKit
 
 class HorizontalCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
-    func setUpCell(_ cell : UICollectionViewCell){
-        cell.backgroundColor = UIColor(patternImage: UIImage(named: "03db")!)
+    func setUpCell(_ city : City){
+        locationLabel.text = (city.value(forKey: Weather.location) as! String)
+        temperatureLabel.text = (city.value(forKey: Weather.temperature) as! String)
+        iconImageView.image = UIImage(named: ((city.value(forKey: Weather.icon) as! String)))
+        self.backgroundColor = UIColor(patternImage: UIImage(named: (city.value(forKey: Weather.backgroundImage) as! String))!)
         
     }
 }
