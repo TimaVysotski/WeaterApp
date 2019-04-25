@@ -99,32 +99,32 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CitiesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitiesTableViewCell" rowHeight="100" id="DhX-3b-h9v" customClass="CitiesTableViewCellController" customModule="WeatherApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CitiesCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="100" reuseIdentifier="CitiesTableViewCell" rowHeight="100" id="DhX-3b-h9v" customClass="CitiesTableViewCellController" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DhX-3b-h9v" id="wPH-gw-lsG">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbX-Jd-lqH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbX-Jd-lqH">
                                                     <rect key="frame" x="15" y="11" width="218" height="78"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="218" id="9lN-Vw-jy3"/>
                                                         <constraint firstAttribute="height" constant="78" id="S2h-fc-cYT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GurmukhiSangamMN" family="Gurmukhi Sangam MN" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oeb-pp-LQs">
-                                                    <rect key="frame" x="359" y="29" width="40" height="40"/>
+                                                    <rect key="frame" x="265" y="29" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Ljv-iM-zaA"/>
                                                         <constraint firstAttribute="height" constant="40" id="rP8-my-MTO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-a1-ODW">
-                                                    <rect key="frame" x="280" y="25" width="78" height="50"/>
+                                                    <rect key="frame" x="186" y="25" width="78" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="PEE-Am-T8u"/>
                                                         <constraint firstAttribute="height" constant="50" id="TLf-uN-FXh"/>
@@ -217,7 +217,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54m-kG-5d0">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="60.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="60.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="UOJ-eN-ZRp"/>
                                                     </constraints>

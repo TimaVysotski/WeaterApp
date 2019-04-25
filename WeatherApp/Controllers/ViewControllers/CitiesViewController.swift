@@ -84,15 +84,18 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
     }
     
     func addCity(_ city: String) {
-        saveCity(city)
-        self.tableView.reloadData()
+        ForecastService.shared.getCurrentWeather(city){ [weak self] cityWeather in
+            DispatchQueue.main.async {
+                self?.saveCity(cityWeather)
+                self?.tableView.reloadData()
+            }
+        }
     }
     
-    func saveCity(_ property : String){
+    func saveCity(_ cityWeather : [String : String]){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let city = City(entity: City.entity(), insertInto: context)
-        city.setValue(property, forKey: "location")
-        
+        saveCurrentCity(city, cityWeather)
         do{
             try context.save()
             cities.append(city)
@@ -110,5 +113,12 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
         } catch let error as NSError {
             print("Could not save\(error), \(error.userInfo)")
         }
+    }
+    
+    func saveCurrentCity(_ city : City,_ cityWeather : [String : String]){
+        city.setValue(cityWeather[Weather.location], forKey: Weather.location)
+        city.setValue(cityWeather[Weather.temperature], forKey: Weather.temperature)
+        city.setValue(cityWeather[Weather.icon], forKey: Weather.icon)
+        city.setValue(cityWeather[Weather.backgroundImage], forKey: Weather.backgroundImage)
     }
 }

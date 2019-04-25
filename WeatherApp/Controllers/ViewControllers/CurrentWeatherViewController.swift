@@ -23,7 +23,6 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
         navigationBar.delegate = self
         setupScrollView()
         escapeNavigationBar()
-        //forecastWeather()
         // startingLocationManager()
     }
     
@@ -37,15 +36,6 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
             scrollView.contentSize.width = self.view.frame.width * CGFloat(cities.count)
             scrollView.addSubview(imageView)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "0\(index + 1)db")!)
-        }
-    }
-    
-    func forecastWeather(){
-        ForecastService.shared.getCurrentWeather(cityName){ [weak self] text in
-            DispatchQueue.main.async {
-                let backgroundImage = UIImage(named: "\(text)b")
-                self?.view.layer.contents = backgroundImage?.cgImage
-            }
         }
     }
     
@@ -101,3 +91,11 @@ extension CurrnetWeatherViewController {
 //        }
 //    }
 //
+//    func forecastWeather(){
+//        ForecastService.shared.getCurrentWeather(cityName){ [weak self] text in
+//            DispatchQueue.main.async {
+//                let backgroundImage = UIImage(named: "\(text)b")
+//                self?.view.layer.contents = backgroundImage?.cgImage
+//            }
+//        }
+//    }

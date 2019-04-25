@@ -16,9 +16,9 @@
 		F2CBFEDA225CA1DF00CCB693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CBFED8225CA1DF00CCB693 /* LaunchScreen.storyboard */; };
 		F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */; };
 		F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */; };
+		F2DBD0E02271B80C004B0F9D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DBD0DF2271B80C004B0F9D /* Weather.swift */; };
 		F2DEBED5226D9E0F0039E379 /* cityList.txt in Resources */ = {isa = PBXBuildFile; fileRef = F2DEBED4226D9E0F0039E379 /* cityList.txt */; };
 		F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E698A12266123600CBDBEF /* ForecastService.swift */; };
-		F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F53C122264E7310057958F /* WeatherJSON.swift */; };
 		F2F9D5A4226E070A00658F08 /* CitiesTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9D5A3226E070A00658F08 /* CitiesTableViewCellController.swift */; };
 		FB85350290C3F140F8C5FAA8 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE4F3B5A895F2B76B890038 /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
@@ -36,9 +36,9 @@
 		F2CBFEDB225CA1DF00CCB693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2CBFEE2225CA52800CCB693 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		F2DBD0DF2271B80C004B0F9D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F2DEBED4226D9E0F0039E379 /* cityList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cityList.txt; path = ../../../cityList.txt; sourceTree = "<group>"; };
 		F2E698A12266123600CBDBEF /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
-		F2F53C122264E7310057958F /* WeatherJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherJSON.swift; sourceTree = "<group>"; };
 		F2F9D5A3226E070A00658F08 /* CitiesTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCellController.swift; sourceTree = "<group>"; };
 		F90C8DFA1861BAAC2B9345EE /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		FBE4F3B5A895F2B76B890038 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,8 +138,8 @@
 		F2CBFEE6225CA98E00CCB693 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F2F53C122264E7310057958F /* WeatherJSON.swift */,
 				F2E698A12266123600CBDBEF /* ForecastService.swift */,
+				F2DBD0DF2271B80C004B0F9D /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 				F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */,
 				F230E48B226A1EE600AFEFAA /* SearchViewController.swift in Sources */,
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
+				F2DBD0E02271B80C004B0F9D /* Weather.swift in Sources */,
 				F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */,
-				F2F53C132264E7310057958F /* WeatherJSON.swift in Sources */,
 				F23B0CF8226A1A4C00560B2B /* SearchTableViewCellController.swift in Sources */,
 				F2F9D5A4226E070A00658F08 /* CitiesTableViewCellController.swift in Sources */,
 				F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */,
