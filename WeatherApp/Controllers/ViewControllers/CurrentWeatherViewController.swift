@@ -11,6 +11,7 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
+    @IBOutlet weak var pageController: UIPageControl!
     
     
     override func viewDidLoad() {
@@ -22,12 +23,16 @@ class CurrnetWeatherViewController : UIViewController, UINavigationBarDelegate, 
         fetchRequest()
         horizontalCollectionView.reloadData()
     }
-    
-    
     @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
         self.present(controller, animated: true, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
+        return .lightContent
+    }
+    
+
 }
 
 extension CurrnetWeatherViewController {

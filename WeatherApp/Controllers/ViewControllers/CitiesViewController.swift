@@ -18,6 +18,9 @@ class CitiesViewController : UIViewController, UINavigationBarDelegate{
         fetchRequest()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
+        return .lightContent
+    }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

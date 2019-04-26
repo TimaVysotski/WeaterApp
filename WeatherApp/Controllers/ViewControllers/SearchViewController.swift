@@ -23,6 +23,10 @@ class SearchViewController : UIViewController{
         searchBar.becomeFirstResponder()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
+        return .lightContent
+    }
+    
     func readCityList(){
         ForecastService.shared.getCurrentCity(){ [weak self] cities in
             DispatchQueue.main.async {
