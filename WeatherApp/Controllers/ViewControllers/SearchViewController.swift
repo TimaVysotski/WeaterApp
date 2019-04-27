@@ -19,6 +19,7 @@ class SearchViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteSeparateLine()
         readCityList()
         searchBar.becomeFirstResponder()
     }
@@ -28,7 +29,7 @@ class SearchViewController : UIViewController{
     }
     
     func readCityList(){
-        ForecastService.shared.getCurrentCity(){ [weak self] cities in
+        CitiesService.shared.getCurrentCity(){ [weak self] cities in
             DispatchQueue.main.async {
                 self?.cityList = cities
             }
@@ -37,6 +38,9 @@ class SearchViewController : UIViewController{
 }
 
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
+    func deleteSeparateLine(){
+        self.tableView.separatorStyle = .none
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if cityIsFound{
             return requiredCity.count
@@ -66,7 +70,7 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        ForecastService.shared.getCityPrefix(cityList, searchText){  [weak self] foundCities in
+        CitiesService.shared.getCityPrefix(cityList, searchText){  [weak self] foundCities in
             DispatchQueue.main.async {
                  self?.requiredCity = foundCities
                  self?.cityIsFound = true

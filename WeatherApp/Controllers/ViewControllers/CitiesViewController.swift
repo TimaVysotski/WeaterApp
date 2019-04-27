@@ -7,10 +7,9 @@ class CitiesViewController : UIViewController, UINavigationBarDelegate{
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = .none
+        deleteSeparateLine()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +28,7 @@ class CitiesViewController : UIViewController, UINavigationBarDelegate{
         guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else {
             return
         }
-        controller.delegate = self 
+        //controller.delegate = self 
         self.present(controller, animated: true, completion: nil)
     }
     
@@ -53,8 +52,9 @@ extension CitiesViewController {
 
 
 
-extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate{
-    func separateLine(){
+extension CitiesViewController : UITableViewDelegate, UITableViewDataSource//, SearchViewControllerDelegate
+{
+    func deleteSeparateLine(){
         self.tableView.separatorStyle = .none
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,15 +87,15 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
         }
     }
     
-    func addCity(_ city: String) {
-        ForecastService.shared.getCurrentWeather(city){ [weak self] cityWeather in
-            DispatchQueue.main.async {
-                self?.saveCity(cityWeather)
-                self?.tableView.reloadData()
-            }
-        }
-    }
-    
+//    func addCity(_ city: String) {
+//        ForecastService.shared.getCurrentWeather(city){ [weak self] cityWeather in
+//            DispatchQueue.main.async {
+//                self?.saveCity(cityWeather)
+//                self?.tableView.reloadData()
+//            }
+//        }
+//    }
+//
     func saveCity(_ cityWeather : [String : String]){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let city = City(entity: City.entity(), insertInto: context)
@@ -120,9 +120,9 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
 //    }
     
     func saveCurrentCity(_ city : City,_ cityWeather : [String : String]){
-        city.setValue(cityWeather[Weather.location], forKey: Weather.location)
-        city.setValue(cityWeather[Weather.temperature], forKey: Weather.temperature)
-        city.setValue(cityWeather[Weather.icon], forKey: Weather.icon)
-        city.setValue(cityWeather[Weather.backgroundImage], forKey: Weather.backgroundImage)
+        city.setValue(cityWeather[Words.location], forKey: Words.location)
+        city.setValue(cityWeather[Words.temperature], forKey: Words.temperature)
+        city.setValue(cityWeather[Words.icon], forKey: Words.icon)
+        city.setValue(cityWeather[Words.backgroundImage], forKey: Words.backgroundImage)
     }
 }

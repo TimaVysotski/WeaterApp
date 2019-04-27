@@ -14,10 +14,10 @@ class CitiesTableViewCellController : UITableViewCell {
     }
     
     func setUpCell(_ city : City){
-       cityLabel.text = (city.value(forKey: Weather.location) as! String)
-       temperatureLabel.text = (city.value(forKey: Weather.temperature) as! String)
-       weatherIconImage.image = UIImage(named: (city.value(forKey: Weather.icon) as! String))
-       self.backgroundColor = UIColor(patternImage: UIImage(named: (city.value(forKey: Weather.backgroundImage) as! String))!)
+       cityLabel.text = (city.value(forKey: Words.location) as! String)
+       temperatureLabel.text = (city.value(forKey: Words.temperature) as! String)
+       weatherIconImage.image = UIImage(named: (city.value(forKey: Words.icon) as! String))
+       self.backgroundColor = UIColor(patternImage: UIImage(named: (city.value(forKey: Words.backgroundImage) as! String))!)
     }
     
     override func prepareForReuse() {
