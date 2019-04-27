@@ -6,69 +6,81 @@ import CoreLocation
 
 var cities = [City]()
 
-class CurrnetWeatherViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-   
-    @IBOutlet weak var horizontalCollectionView: UICollectionView!
-    @IBOutlet weak var toolBar: UIToolbar!
-    @IBOutlet weak var pageControll: UIPageControl!
+class CurrnetWeatherViewController : UIViewController{
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var scrollViewImageView: UIImageView!
+    
+    
+    var images : [String] = ["02db","01db"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        escapeToolBar(toolBar)
+        setUpScrollView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchRequest()
-        horizontalCollectionView.reloadData()
-    }
-    
-    
-    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
-        self.present(controller, animated: true, completion: nil)
-    }
-    @IBAction func weatherButtonPressed(_ sender: UIBarButtonItem) {
-       // checkLocation()
+        //fetchRequest()
+       // horizontalCollectionView.reloadData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle  {
         return .lightContent
-    }    
+    }
+    
+    func setUpScrollView(){
+        scrollView.frame = view.frame
+        for index in 0..<images.count {
+            scrollViewImageView.image = UIImage(named: images[index])
+            scrollViewImageView.contentMode = .scaleAspectFit
+            let xPosition = self.view.frame.width * CGFloat(index)
+            scrollViewImageView.frame = CGRect(x: xPosition, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            scrollView.contentSize.width = scrollView.frame.width * CGFloat(index + 1)
+            
+        }
+    }
 }
 
 
 
 // MARK -- CollectionView
-
-extension CurrnetWeatherViewController : UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width
-        let height = UIScreen.main.bounds.height + 80
-        return CGSize(width: width, height: height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.pageControll.numberOfPages = cities.count
-        return cities.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
-        let city = cities[indexPath.row]
-        cell.setUpCell(city)
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControll.currentPage = indexPath.row
-    }
-}
-
-
+//
+//extension CurrnetWeatherViewController : UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width = UIScreen.main.bounds.width
+//        let height = UIScreen.main.bounds.height + 80
+//        return CGSize(width: width, height: height)
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0
+//    }
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//       // self.pageControll.numberOfPages = cities.count
+//        return cities.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
+//        let city = cities[indexPath.row]
+//        cell.setUpCell(city)
+//        return cell
+//    }
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        self.pageControll.currentPage = indexPath.row
+//    }
+//}
 
 
+
+//@IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+//    let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
+//    self.present(controller, animated: true, completion: nil)
+//}
+//@IBAction func weatherButtonPressed(_ sender: UIBarButtonItem) {
+//    // checkLocation()
+//}
 
 
 

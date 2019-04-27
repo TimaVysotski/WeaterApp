@@ -4,7 +4,7 @@ class CurrentWeather {
     var location = String()
     var temperatureToday = String()
     var feltTemperature = String()
-    var desriptionToday = String()
+    var descriptionToday = String()
     var iconToday = String()
     var backgroundImage = String()
     var windSpeed = String()

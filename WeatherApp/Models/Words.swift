@@ -17,6 +17,5 @@ struct Words {
     static let wind = "wind"
     static let speed = "speed"
     static let degree = "deg"
-    
     static let day = "dt_txt"
 }

@@ -7,23 +7,41 @@ class ForecastService {
     static let shared = ForecastService()
     
     private let forecastAPIKey = "03f07442bb1ee385c3c61ec678db4d9b"
-    private var forecastBaseURL = "https://api.openweathermap.org/data/2.5/forecast?lang=en&units=metric&appid="
+    private var forecastBaseURL = "https://api.openweathermap.org/data/2.5/"
+    private var forecastParameters = "?lang=en&units=metric&appid="
     
-
+    
     func getCurrentWeather(_ cityName : String,_ weather : CurrentWeather, completion : @escaping (_ resault : CurrentWeather) -> () ){
-        if let forecastURL = URL(string: "\(forecastBaseURL)\(forecastAPIKey)&q=\(cityName)"){
+        if let forecastURL = URL(string: "\(forecastBaseURL)weather\(forecastParameters)\(forecastAPIKey)&q=\(cityName)"){
             Alamofire.request(forecastURL).responseJSON(completionHandler: {(response) in
                 DispatchQueue.global().async() {
                     if let responseWeather = response.result.value{
                         let jsonResponse = JSON(responseWeather)
-                        weather.location = jsonResponse[Words.city][Words.name].stringValue 
-                        weather.temperatureToday = "\(jsonResponse[Words.list].array![0][Words.main][Words.temp].intValue)°"
-                        let maxTemperature = jsonResponse[Words.list].array![0][Words.main][Words.maxTemperature].doubleValue
-                        let minTemperature = jsonResponse[Words.list].array![0][Words.main][Words.minTemperature].doubleValue
-                        weather.feltTemperature = "\(Int((maxTemperature + minTemperature) / 2))°"
-                        weather.desriptionToday = jsonResponse[Words.list].array![0][Words.weather].array![0][Words.description].stringValue
-                        weather.iconToday = jsonResponse[Words.list].array![0][Words.weather].array![0][Words.icon].stringValue
+                        weather.location = jsonResponse[Words.name].stringValue
+                        weather.descriptionToday = jsonResponse[Words.weather].array![0][Words.description].stringValue
+                        weather.iconToday = jsonResponse[Words.weather].array![0][Words.icon].stringValue
                         weather.backgroundImage = "\(weather.iconToday)b"
+                        weather.temperatureToday = "\(jsonResponse[Words.main][Words.temp].intValue)°"
+                        let maxTemperature = jsonResponse[Words.main][Words.maxTemperature].doubleValue
+                        let minTemperature = jsonResponse[Words.main][Words.minTemperature].doubleValue
+                        weather.feltTemperature = "\(Int((maxTemperature + minTemperature) / 2))°"
+                        completion(weather)
+                    } else {
+                        print("Error")
+                    }
+                }
+            })
+        }
+        
+    }
+    
+
+    func getWeekWeather(_ cityName : String,_ weather : CurrentWeather, completion : @escaping (_ resault : CurrentWeather) -> () ){
+        if let forecastURL = URL(string: "\(forecastBaseURL)forecast\(forecastParameters)\(forecastAPIKey)&q=\(cityName)"){
+            Alamofire.request(forecastURL).responseJSON(completionHandler: {(response) in
+                DispatchQueue.global().async() {
+                    if let responseWeather = response.result.value{
+                        let jsonResponse = JSON(responseWeather)
                         weather.windSpeed = "\(jsonResponse[Words.list].array![0][Words.wind][Words.speed].doubleValue) m/sec"
                         weather.windDirection = self.checkWindDirection(jsonResponse[Words.list].array![0][Words.wind][Words.degree].intValue)
                         weather.firstDayTemperature = "\(jsonResponse[Words.list].array![8][Words.main][Words.temp].intValue)°"
@@ -46,13 +64,6 @@ class ForecastService {
                         weather.thirdDayName = self.checkWeekDayName(weather.thirdDayNameId)
                         weather.fourthDayName = self.checkWeekDayName(weather.fourthDayNameId)
                         weather.fifthDayName = self.checkWeekDayName(weather.fifthDayNameId)
-                        print("----------------------")
-                        print(weather.todayDayName)
-                        print(weather.firstDayName)
-                        print(weather.secondDayName)
-                        print(weather.thirdDayName)
-                        print(weather.fourthDayName)
-                        print(weather.fifthDayName)
                         completion(weather)
                     } else {
                         print("Error")
