@@ -1,21 +1,34 @@
 import Foundation
 
 class CurrentWeather {
-    var location : String = "--"
-    var temperatureToday : String = "--"
-    var feltTemperature : String = "--"
-    var weatherDesriptionToday : String = "--"
-    var weatherIconToday : String = "--"
-    var windSpeed : String = "--"
-    var windDirection : String = "--"
-    var firstDayTemperature : String = "--"
-    var firstDayIcon : String = "--"
-    var secondDayTemperature : String = "--"
-    var secondDayIcon : String = "--"
-    var thirdDayTemperature : String = "--"
-    var thirdDayIcon : String = "--"
-    var fourthDayTemperature : String = "--"
-    var fourthayIcon : String = "--"
-    var fifthDayTemperature : String = "--"
-    var fifthDayIcon : String = "--"
+    var location = String()
+    var temperatureToday = String()
+    var feltTemperature = String()
+    var desriptionToday = String()
+    var iconToday = String()
+    var backgroundImage = String()
+    var windSpeed = String()
+    var windDirection = String()
+    var firstDayTemperature = String()
+    var firstDayIcon = String()
+    var secondDayTemperature = String()
+    var secondDayIcon = String()
+    var thirdDayTemperature = String()
+    var thirdDayIcon = String()
+    var fourthDayTemperature = String()
+    var fourthayIcon = String()
+    var fifthDayTemperature = String()
+    var fifthDayIcon = String()
+    var todayDayName = String()
+    var firstDayName = String()
+    var secondDayName = String()
+    var thirdDayName = String()
+    var fourthDayName = String()
+    var fifthDayName = String()
+    var todayDayNameId = Int()
+    var firstDayNameId = Int()
+    var secondDayNameId = Int()
+    var thirdDayNameId = Int()
+    var fourthDayNameId = Int()
+    var fifthDayNameId = Int()
 }

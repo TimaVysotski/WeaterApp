@@ -59,14 +59,24 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         }
     return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cityName = requiredCity[indexPath.row].replacingOccurrences(of: " ", with: "%20")
         delegate?.addCity(cityName)
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
+
+
+
+
+
+
+
+
+
+
 
 extension SearchViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

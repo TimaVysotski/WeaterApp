@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
-
-var weather = CurrentWeather()
+import CoreData
 
 class TestViewController : UIViewController {
     
@@ -11,11 +10,6 @@ class TestViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ForecastService.shared.getCurrentWeather(city, weather){ [weak self] weather in
-            DispatchQueue.main.async {
-                self?.testLabel.text = weather.location
-            }
-        }
     }
 }
+
