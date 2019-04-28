@@ -7,9 +7,13 @@ import CoreLocation
 var cities = [City]()
 
 class CurrnetWeatherViewController : UIViewController{
+
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+
     
     override var preferredStatusBarStyle: UIStatusBarStyle  {
         return .lightContent
@@ -25,14 +29,6 @@ class CurrnetWeatherViewController : UIViewController{
         launchScrollView()
     }
     
-    @IBAction func menuButtonPressed(_ sender: UIButton) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
-        self.present(controller, animated: true, completion: nil)
-    }
-}
-
-extension CurrnetWeatherViewController : UIScrollViewDelegate {
-    
     func launchScrollView(){
         let slides: [ScrollViewSlide] = createSlidesForScrollView()
         setUpScrollViewSlides(slides)
@@ -43,7 +39,7 @@ extension CurrnetWeatherViewController : UIScrollViewDelegate {
         var slides = [ScrollViewSlide]()
         for index in 0..<cities.count{
             let slide : ScrollViewSlide = Bundle.main.loadNibNamed("ScrollViewSlideView", owner: self, options: nil)?.first as! ScrollViewSlide
-            slide.setUpScrollViewSlide(cities[index])
+            slide.city = cities[index]
             slides.append(slide)
         }
         return slides
@@ -58,6 +54,7 @@ extension CurrnetWeatherViewController : UIScrollViewDelegate {
             slides[index].frame = CGRect(x: view.frame.width * CGFloat(index), y: 0, width: view.frame.width, height: view.frame.height)
             scrollView.addSubview(slides[index])
         }
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -65,6 +62,10 @@ extension CurrnetWeatherViewController : UIScrollViewDelegate {
         pageControl.currentPage = Int(pageIndex)
     }
     
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
+        self.present(controller, animated: true, completion: nil)
+    }
 }
 
 // MARK -- CollectionView

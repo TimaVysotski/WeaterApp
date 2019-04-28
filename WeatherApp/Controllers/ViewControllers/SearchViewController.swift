@@ -68,16 +68,6 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 extension SearchViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         CitiesService.shared.getCityPrefix(cityList, searchText){  [weak self] foundCities in

@@ -2,11 +2,30 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
         <attribute name="backgroundImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionToday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feltTemperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fifthDayIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fifthDayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fifthDayTemperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstDayIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstDayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstDayTemperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fourthDayIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fourthDayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fourthDayTemperature" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secondDayIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secondDayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secondDayTemperature" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thirdDayIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thirdDayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thirdDayTemperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windDirection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="City" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="City" positionX="-63" positionY="-18" width="128" height="390"/>
     </elements>
 </model>

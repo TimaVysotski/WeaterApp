@@ -22,8 +22,17 @@
 		F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */; };
 		F2D8514122757CF400617A44 /* ScrollViewSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D8514022757CF400617A44 /* ScrollViewSlideView.xib */; };
 		F2D8514322757D2D00617A44 /* ScrollViewSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8514222757D2D00617A44 /* ScrollViewSlide.swift */; };
+		F2D8514A22759FB700617A44 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8514822759FB700617A44 /* LocationTableViewCell.swift */; };
+		F2D8514B22759FB700617A44 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D8514922759FB700617A44 /* LocationTableViewCell.xib */; };
+		F2D851512275A8FF00617A44 /* WindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8514F2275A8FF00617A44 /* WindTableViewCell.swift */; };
+		F2D851522275A8FF00617A44 /* WindTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D851502275A8FF00617A44 /* WindTableViewCell.xib */; };
+		F2D851552275A91800617A44 /* WeekDayWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D851532275A91800617A44 /* WeekDayWeatherTableViewCell.swift */; };
+		F2D851562275A91800617A44 /* WeekDayWeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D851542275A91800617A44 /* WeekDayWeatherTableViewCell.xib */; };
+		F2D8515A2275B76900617A44 /* FeltTemperatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D851582275B76900617A44 /* FeltTemperatureTableViewCell.swift */; };
+		F2D8515B2275B76900617A44 /* FeltTemperatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D851592275B76900617A44 /* FeltTemperatureTableViewCell.xib */; };
+		F2D851692276032D00617A44 /* TableViewCellEgor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D851672276032D00617A44 /* TableViewCellEgor.swift */; };
+		F2D8516A2276032D00617A44 /* TableViewCellEgor.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D851682276032D00617A44 /* TableViewCellEgor.xib */; };
 		F2DBD0E02271B80C004B0F9D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DBD0DF2271B80C004B0F9D /* Words.swift */; };
-		F2DBD0E42271FD9C004B0F9D /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DBD0E32271FD9C004B0F9D /* HorizontalCollectionViewCell.swift */; };
 		F2DEBED5226D9E0F0039E379 /* cityList.txt in Resources */ = {isa = PBXBuildFile; fileRef = F2DEBED4226D9E0F0039E379 /* cityList.txt */; };
 		F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E698A12266123600CBDBEF /* ForecastService.swift */; };
 		F2F9D5A4226E070A00658F08 /* CitiesTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9D5A3226E070A00658F08 /* CitiesTableViewCellController.swift */; };
@@ -49,8 +58,17 @@
 		F2CBFEE9225CBD8100CCB693 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		F2D8514022757CF400617A44 /* ScrollViewSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewSlideView.xib; sourceTree = "<group>"; };
 		F2D8514222757D2D00617A44 /* ScrollViewSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewSlide.swift; sourceTree = "<group>"; };
+		F2D8514822759FB700617A44 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		F2D8514922759FB700617A44 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		F2D8514F2275A8FF00617A44 /* WindTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindTableViewCell.swift; sourceTree = "<group>"; };
+		F2D851502275A8FF00617A44 /* WindTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WindTableViewCell.xib; sourceTree = "<group>"; };
+		F2D851532275A91800617A44 /* WeekDayWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		F2D851542275A91800617A44 /* WeekDayWeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekDayWeatherTableViewCell.xib; sourceTree = "<group>"; };
+		F2D851582275B76900617A44 /* FeltTemperatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeltTemperatureTableViewCell.swift; sourceTree = "<group>"; };
+		F2D851592275B76900617A44 /* FeltTemperatureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeltTemperatureTableViewCell.xib; sourceTree = "<group>"; };
+		F2D851672276032D00617A44 /* TableViewCellEgor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEgor.swift; sourceTree = "<group>"; };
+		F2D851682276032D00617A44 /* TableViewCellEgor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellEgor.xib; sourceTree = "<group>"; };
 		F2DBD0DF2271B80C004B0F9D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
-		F2DBD0E32271FD9C004B0F9D /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2DEBED4226D9E0F0039E379 /* cityList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cityList.txt; path = ../../../cityList.txt; sourceTree = "<group>"; };
 		F2E698A12266123600CBDBEF /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		F2F9D5A3226E070A00658F08 /* CitiesTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCellController.swift; sourceTree = "<group>"; };
@@ -137,12 +155,12 @@
 		F2CBFECE225CA1DE00CCB693 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				F2D8513F22757CE100617A44 /* New Group1 */,
-				F249CB84226A381A00CFDE10 /* AppData */,
+				F2D8514722759F8C00617A44 /* CurrentWeatherAmounts */,
 				F22BAFE8225D30B60004F4A6 /* View */,
 				F2CBFEE1225CA51200CCB693 /* Controllers */,
 				F2CBFEE6225CA98E00CCB693 /* Models */,
 				F2CBFEED225CC4AF00CCB693 /* Extension */,
+				F249CB84226A381A00CFDE10 /* AppData */,
 				F2CBFECF225CA1DE00CCB693 /* AppDelegate.swift */,
 				F2CBFED6225CA1DF00CCB693 /* Assets.xcassets */,
 				F2CBFED8225CA1DF00CCB693 /* LaunchScreen.storyboard */,
@@ -163,9 +181,8 @@
 		F2CBFEE6225CA98E00CCB693 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F2D8514622759F1200617A44 /* Classes */,
 				F22604BD2273746A00B99BF3 /* Services */,
-				F2DBD0DF2271B80C004B0F9D /* Words.swift */,
-				F20BA4E62274884F00E60007 /* CurrentWether.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,13 +195,80 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F2D8513F22757CE100617A44 /* New Group1 */ = {
+		F2D8514522759DF500617A44 /* ScrollViewSlides */ = {
 			isa = PBXGroup;
 			children = (
-				F2D8514022757CF400617A44 /* ScrollViewSlideView.xib */,
 				F2D8514222757D2D00617A44 /* ScrollViewSlide.swift */,
+				F2D8514022757CF400617A44 /* ScrollViewSlideView.xib */,
 			);
-			path = "New Group1";
+			path = ScrollViewSlides;
+			sourceTree = "<group>";
+		};
+		F2D8514622759F1200617A44 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F2DBD0DF2271B80C004B0F9D /* Words.swift */,
+				F20BA4E62274884F00E60007 /* CurrentWether.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F2D8514722759F8C00617A44 /* CurrentWeatherAmounts */ = {
+			isa = PBXGroup;
+			children = (
+				F2D85162227602EB00617A44 /* New Group */,
+				F2D8514522759DF500617A44 /* ScrollViewSlides */,
+				F2D8514C2275A86900617A44 /* TableViewLocationCell */,
+				F2D8514D2275A88200617A44 /* TableViewWindCell */,
+				F2D851572275B74400617A44 /* FeltTemperatureCell */,
+				F2D8514E2275A8AB00617A44 /* TableViewWeekDayWeatherCell */,
+			);
+			path = CurrentWeatherAmounts;
+			sourceTree = "<group>";
+		};
+		F2D8514C2275A86900617A44 /* TableViewLocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2D8514822759FB700617A44 /* LocationTableViewCell.swift */,
+				F2D8514922759FB700617A44 /* LocationTableViewCell.xib */,
+			);
+			path = TableViewLocationCell;
+			sourceTree = "<group>";
+		};
+		F2D8514D2275A88200617A44 /* TableViewWindCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2D8514F2275A8FF00617A44 /* WindTableViewCell.swift */,
+				F2D851502275A8FF00617A44 /* WindTableViewCell.xib */,
+			);
+			path = TableViewWindCell;
+			sourceTree = "<group>";
+		};
+		F2D8514E2275A8AB00617A44 /* TableViewWeekDayWeatherCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2D851532275A91800617A44 /* WeekDayWeatherTableViewCell.swift */,
+				F2D851542275A91800617A44 /* WeekDayWeatherTableViewCell.xib */,
+			);
+			path = TableViewWeekDayWeatherCell;
+			sourceTree = "<group>";
+		};
+		F2D851572275B74400617A44 /* FeltTemperatureCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2D851582275B76900617A44 /* FeltTemperatureTableViewCell.swift */,
+				F2D851592275B76900617A44 /* FeltTemperatureTableViewCell.xib */,
+			);
+			path = FeltTemperatureCell;
+			sourceTree = "<group>";
+		};
+		F2D85162227602EB00617A44 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				F2D851672276032D00617A44 /* TableViewCellEgor.swift */,
+				F2D851682276032D00617A44 /* TableViewCellEgor.xib */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F2DBD0E12271FCE3004B0F9D /* TablesCellControllers */ = {
@@ -196,18 +280,9 @@
 			path = TablesCellControllers;
 			sourceTree = "<group>";
 		};
-		F2DBD0E22271FCFC004B0F9D /* ColectionViewCellControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F2DBD0E32271FD9C004B0F9D /* HorizontalCollectionViewCell.swift */,
-			);
-			path = ColectionViewCellControllers;
-			sourceTree = "<group>";
-		};
 		F2F9D5A2226DDB7000658F08 /* CellsControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2DBD0E22271FCFC004B0F9D /* ColectionViewCellControllers */,
 				F2DBD0E12271FCE3004B0F9D /* TablesCellControllers */,
 			);
 			path = CellsControllers;
@@ -284,9 +359,14 @@
 			files = (
 				F2CBFEDA225CA1DF00CCB693 /* LaunchScreen.storyboard in Resources */,
 				F2CBFED7225CA1DF00CCB693 /* Assets.xcassets in Resources */,
+				F2D8516A2276032D00617A44 /* TableViewCellEgor.xib in Resources */,
+				F2D8515B2275B76900617A44 /* FeltTemperatureTableViewCell.xib in Resources */,
+				F2D8514B22759FB700617A44 /* LocationTableViewCell.xib in Resources */,
 				F2D8514122757CF400617A44 /* ScrollViewSlideView.xib in Resources */,
 				F2CBFED5225CA1DE00CCB693 /* Main.storyboard in Resources */,
+				F2D851562275A91800617A44 /* WeekDayWeatherTableViewCell.xib in Resources */,
 				F2DEBED5226D9E0F0039E379 /* cityList.txt in Resources */,
+				F2D851522275A8FF00617A44 /* WindTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,18 +428,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2DBD0E42271FD9C004B0F9D /* HorizontalCollectionViewCell.swift in Sources */,
 				F2B510E4225F46E3008A7A19 /* WeatherAppModel.xcdatamodeld in Sources */,
 				F2E698A22266123600CBDBEF /* ForecastService.swift in Sources */,
+				F2D851692276032D00617A44 /* TableViewCellEgor.swift in Sources */,
 				F230E48B226A1EE600AFEFAA /* SearchViewController.swift in Sources */,
 				F2CBFED0225CA1DE00CCB693 /* AppDelegate.swift in Sources */,
 				F20BA4C02274550300E60007 /* TestViewController.swift in Sources */,
 				F2DBD0E02271B80C004B0F9D /* Words.swift in Sources */,
+				F2D8514A22759FB700617A44 /* LocationTableViewCell.swift in Sources */,
+				F2D851512275A8FF00617A44 /* WindTableViewCell.swift in Sources */,
 				F20BA4E72274884F00E60007 /* CurrentWether.swift in Sources */,
 				F2CBFEEA225CBD8100CCB693 /* CitiesViewController.swift in Sources */,
 				F22604BC2273746300B99BF3 /* CitiesService.swift in Sources */,
 				F22604BF2273775100B99BF3 /* UIViewControllerExtension.swift in Sources */,
 				F2D8514322757D2D00617A44 /* ScrollViewSlide.swift in Sources */,
+				F2D8515A2275B76900617A44 /* FeltTemperatureTableViewCell.swift in Sources */,
+				F2D851552275A91800617A44 /* WeekDayWeatherTableViewCell.swift in Sources */,
 				F23B0CF8226A1A4C00560B2B /* SearchTableViewCellController.swift in Sources */,
 				F2F9D5A4226E070A00658F08 /* CitiesTableViewCellController.swift in Sources */,
 				F2CBFEE3225CA52800CCB693 /* CurrentWeatherViewController.swift in Sources */,

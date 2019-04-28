@@ -92,8 +92,12 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
     func addCity(_ city: String) {
         ForecastService.shared.getCurrentWeather(city, weather){ [weak self] weather in
             DispatchQueue.main.async {
-                self?.saveCity(weather)
-                self?.tableView.reloadData()
+                ForecastService.shared.getWeekWeather(city, weather){ [weak self] weather in
+                    DispatchQueue.main.async {
+                        self?.saveCity(weather)
+                        self?.tableView.reloadData()
+                    }
+                }
             }
         }
     }
@@ -102,6 +106,7 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let city = City(entity: City.entity(), insertInto: context)
         saveCurrentCity(city, weather)
+        saveCurrentWeather(city, weather)
         do{
             try context.save()
             cities.append(city)
@@ -116,5 +121,27 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
         city.setValue(weather.temperatureToday, forKey: Words.temperature)
         city.setValue(weather.iconToday, forKey: Words.icon)
         city.setValue(weather.backgroundImage, forKey: Words.backgroundImage)
+        city.setValue(weather.descriptionToday, forKey: Words.descriptionToday)
+        city.setValue(weather.feltTemperature, forKey: Words.feltTemperature)
+    }
+    
+    func saveCurrentWeather(_ city : City,_ weather : CurrentWeather){
+        city.setValue(weather.windDirection, forKey: Words.windDirection)
+        city.setValue(weather.windSpeed, forKey: Words.windSpeed)
+        city.setValue(weather.firstDayName, forKey: Words.firstDayName)
+        city.setValue(weather.fifthDayTemperature, forKey: Words.firstDayTemperature)
+        city.setValue(weather.firstDayIcon, forKey: Words.firstDayIcon)
+        city.setValue(weather.secondDayName, forKey: Words.secondDayName)
+        city.setValue(weather.secondDayTemperature, forKey: Words.secondDayTemperature)
+        city.setValue(weather.secondDayIcon, forKey: Words.secondDayIcon)
+        city.setValue(weather.thirdDayName, forKey: Words.thirdDayName)
+        city.setValue(weather.thirdDayTemperature, forKey: Words.thirdDayTemperature)
+        city.setValue(weather.thirdDayIcon, forKey: Words.thirdDayIcon)
+        city.setValue(weather.fourthDayName, forKey: Words.fourthDayName)
+        city.setValue(weather.fourthDayTemperature, forKey: Words.fourthDayTemperature)
+        city.setValue(weather.fourthayIcon, forKey: Words.fourthDayIcon)
+        city.setValue(weather.firstDayName, forKey: Words.fifthDayName)
+        city.setValue(weather.fifthDayTemperature, forKey: Words.fifthDayTemperature)
+        city.setValue(weather.fifthDayIcon, forKey: Words.fifthDayIcon)
     }
 }
