@@ -9,6 +9,7 @@ class ScrollViewSlide: UIView{
    
     var cellData = [CellData(cell : 1), CellData(cell : 2), CellData(cell : 3), CellData(cell : 4), CellData(cell : 5), CellData(cell : 6)]
     
+    
     @IBOutlet weak var scrollViewImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!

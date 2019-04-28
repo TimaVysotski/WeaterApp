@@ -10,8 +10,9 @@ protocol SelfLocationDelegate : AnyObject{
     func addSelfLocation(_ city : String)
 }
 
-class CurrnetWeatherViewController : UIViewController{
+class CurrnetWeatherViewController : UIViewController, UIScrollViewDelegate{
 
+    
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -68,12 +69,11 @@ class CurrnetWeatherViewController : UIViewController{
         }
         
     }
-    
-   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-    print(pageIndex)
-        pageControl.currentPage = Int(pageIndex)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        pageControl.currentPage = Int(pageNumber)
     }
+    
     
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
