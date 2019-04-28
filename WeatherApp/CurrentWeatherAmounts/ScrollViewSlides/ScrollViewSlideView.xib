@@ -48,13 +48,6 @@
                         <constraint firstAttribute="trailing" secondItem="U3a-st-pi0" secondAttribute="trailing" id="s6J-Tj-vwq"/>
                     </constraints>
                 </view>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2N-MQ-GUg">
-                    <rect key="frame" x="0.0" y="846" width="414" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="xqW-FY-PT7"/>
-                    </constraints>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-p6-bG2">
                     <rect key="frame" x="0.0" y="150" width="414" height="696"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,21 +55,18 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="H2N-MQ-GUg" secondAttribute="bottom" id="365-Ai-Vx4"/>
                 <constraint firstItem="3dD-nd-gdD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="6vA-ig-QMq"/>
-                <constraint firstItem="H2N-MQ-GUg" firstAttribute="top" secondItem="uWd-p6-bG2" secondAttribute="bottom" id="F1V-qY-vAT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uWd-p6-bG2" secondAttribute="bottom" constant="16" id="Mss-mY-zAB"/>
                 <constraint firstItem="3dD-nd-gdD" firstAttribute="top" secondItem="RSK-6s-zJL" secondAttribute="bottom" id="Rds-nJ-uBZ"/>
                 <constraint firstItem="ygA-GM-dmg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="U9d-2i-kKH"/>
                 <constraint firstItem="RSK-6s-zJL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W26-gA-eTF"/>
                 <constraint firstItem="ygA-GM-dmg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZFz-Nu-fw6"/>
                 <constraint firstItem="uWd-p6-bG2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ZhU-Bd-8Y9"/>
-                <constraint firstItem="H2N-MQ-GUg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cP2-u4-tmv"/>
                 <constraint firstItem="3dD-nd-gdD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fkF-Ra-pyZ"/>
                 <constraint firstItem="uWd-p6-bG2" firstAttribute="top" secondItem="3dD-nd-gdD" secondAttribute="bottom" id="gBP-Xf-efp"/>
                 <constraint firstItem="RSK-6s-zJL" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jtT-L7-cql"/>
                 <constraint firstItem="RSK-6s-zJL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="q8Y-0x-Vyd"/>
                 <constraint firstItem="uWd-p6-bG2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qcs-9Z-kei"/>
-                <constraint firstItem="H2N-MQ-GUg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="tXF-r4-AvM"/>
                 <constraint firstAttribute="bottom" secondItem="ygA-GM-dmg" secondAttribute="bottom" id="uEf-Pv-0dj"/>
                 <constraint firstItem="ygA-GM-dmg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-5" id="vL7-Gm-HM9"/>
             </constraints>

@@ -11,13 +11,14 @@ class CitiesService {
     
     
     func getSelfLocation(_ lat : Double, _ lon : Double, completion : @escaping (_ resault : String) -> ()){
-        if let forecastURL = URL(string: "\(forecastBaseURL)\(forecastAPIKey)&lan=\(lat)&lon=\(lon)"){
+        if let forecastURL = URL(string: "\(forecastBaseURL)\(forecastAPIKey)&lat=\(lat)&lon=\(lon)"){
             Alamofire.request(forecastURL).responseJSON(completionHandler: {(response) in
                 DispatchQueue.global().async() {
                     if let responseWeather = response.result.value{
                         var currentCity = String()
                         let jsonResponse = JSON(responseWeather)
                         currentCity = jsonResponse[Words.name].stringValue
+                        print("JSON-\(currentCity)")
                         completion(currentCity)
                     } else {
                         print("Error")

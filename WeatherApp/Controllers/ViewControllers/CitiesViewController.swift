@@ -34,6 +34,10 @@ class CitiesViewController : UIViewController, UINavigationBarDelegate{
         self.present(controller, animated: true, completion: nil)
     }
     
+    func reloadData(_ city: City){
+        
+    }
+    
 }
 
 
@@ -54,8 +58,9 @@ extension CitiesViewController {
 
 
 
-extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate
+extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, SearchViewControllerDelegate, SelfLocationDelegate
 {
+
     func deleteSeparateLine(){
         self.tableView.separatorStyle = .none
     }
@@ -101,7 +106,19 @@ extension CitiesViewController : UITableViewDelegate, UITableViewDataSource, Sea
             }
         }
     }
-
+    func addSelfLocation(_ city: String) {
+        ForecastService.shared.getCurrentWeather(city, weather){ [weak self] weather in
+            DispatchQueue.main.async {
+                ForecastService.shared.getWeekWeather(city, weather){ [weak self] weather in
+                    DispatchQueue.main.async {
+                        self?.saveCity(weather)
+                        self?.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
     func saveCity(_ weather : CurrentWeather){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let city = City(entity: City.entity(), insertInto: context)

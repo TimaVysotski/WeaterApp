@@ -1,5 +1,5 @@
 //
-//  TableViewCellEgor.swift
+//  MainTableViewCell.swift
 //  WeatherApp
 //
 //  Created by Timan on 4/28/19.
@@ -8,17 +8,21 @@
 
 import UIKit
 
-class TableViewCellEgor: UITableViewCell {
-
+class MainTableViewCell: UITableViewCell {
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func setUpCell(_ city : City){
+        
+        self.temperatureLabel.text = (city.value(forKey: Words.temperature) as! String)
     }
     
 }

@@ -35,30 +35,27 @@
                             <constraint firstAttribute="width" constant="70" id="krf-2s-0vF"/>
                             <constraint firstAttribute="height" constant="50" id="t4E-Bu-acU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNx-7b-cn0">
-                        <rect key="frame" x="186" y="10.5" width="70" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="h5t-a5-A7F"/>
-                            <constraint firstAttribute="width" constant="70" id="smE-Fp-zHU"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="186" y="10.5" width="118" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="dNx-7b-cn0" secondAttribute="bottom" constant="10" id="9EG-9a-AHR"/>
-                    <constraint firstItem="dNx-7b-cn0" firstAttribute="leading" secondItem="ap7-ra-QxT" secondAttribute="trailing" id="FkV-aU-Upt"/>
+                    <constraint firstAttribute="bottom" secondItem="dNx-7b-cn0" secondAttribute="bottom" constant="10" id="HhA-2N-2po"/>
                     <constraint firstItem="Pbw-o5-2oa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="R6Y-nV-aNI"/>
                     <constraint firstAttribute="bottom" secondItem="Pbw-o5-2oa" secondAttribute="bottom" constant="10" id="ZhR-Aw-sAa"/>
                     <constraint firstItem="ap7-ra-QxT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ziz-9R-9rh"/>
                     <constraint firstAttribute="bottom" secondItem="ap7-ra-QxT" secondAttribute="bottom" constant="10" id="gyk-we-F81"/>
-                    <constraint firstItem="dNx-7b-cn0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="khD-JU-1Kn"/>
+                    <constraint firstItem="dNx-7b-cn0" firstAttribute="leading" secondItem="ap7-ra-QxT" secondAttribute="trailing" id="h1r-Zb-Mm2"/>
                     <constraint firstItem="ap7-ra-QxT" firstAttribute="leading" secondItem="Pbw-o5-2oa" secondAttribute="trailing" id="okV-UL-VIg"/>
+                    <constraint firstItem="dNx-7b-cn0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="piJ-fw-uoE"/>
+                    <constraint firstAttribute="trailing" secondItem="dNx-7b-cn0" secondAttribute="trailing" constant="16" id="vxa-l8-QT7"/>
                     <constraint firstItem="Pbw-o5-2oa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="xE6-6I-5uX"/>
                 </constraints>
             </tableViewCellContentView>

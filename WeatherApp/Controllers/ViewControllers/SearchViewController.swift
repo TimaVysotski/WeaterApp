@@ -37,7 +37,7 @@ class SearchViewController : UIViewController{
     }
 }
 
-extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
+extension SearchViewController : UITableViewDelegate, UITableViewDataSource{
     func deleteSeparateLine(){
         self.tableView.separatorStyle = .none
     }

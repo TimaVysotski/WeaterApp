@@ -7,7 +7,7 @@ struct CellData {
 
 class ScrollViewSlide: UIView{
    
-    var cellData = [CellData(cell : 1), CellData(cell : 2), CellData(cell : 3), CellData(cell : 4)]
+    var cellData = [CellData(cell : 1), CellData(cell : 2), CellData(cell : 3), CellData(cell : 4), CellData(cell : 5), CellData(cell : 6)]
     
     @IBOutlet weak var scrollViewImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
@@ -32,28 +32,27 @@ extension ScrollViewSlide : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      if cellData[indexPath.row].cell == 1{
-            let cell = Bundle.main.loadNibNamed("LocationTableViewCell", owner: self, options: nil)?.first as! LocationTableViewCell
+         if cellData[indexPath.row].cell == 1{
+            let cell = Bundle.main.loadNibNamed("MainTableViewCell", owner: self, options: nil)?.first as! MainTableViewCell
             cell.setUpCell(city!)
-            cell.translatesAutoresizingMaskIntoConstraints = false
-            cell.clipsToBounds = false
-        cell.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300)
-            NSLayoutConstraint.activate([
-                cell.heightAnchor.constraint(equalToConstant: 300),
-                cell.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width)
-                ])
-        print("---------------------------")
-        print(cell.frame)
             return cell
-        } else if cellData[indexPath.row].cell == 2{
+         } else if cellData[indexPath.row].cell == 2{
+            let cell = Bundle.main.loadNibNamed("IconTableViewCell", owner: self, options: nil)?.first as! IconTableViewCell
+            cell.setUpCell(city!)
+            return cell
+         }else if cellData[indexPath.row].cell == 3{
+            let cell = Bundle.main.loadNibNamed("DescriptionTableViewCell", owner: self, options: nil)?.first as! DescriptionTableViewCell
+            cell.setUpCell(city!)
+            return cell
+         } else if cellData[indexPath.row].cell == 4{
             let cell = Bundle.main.loadNibNamed("WindTableViewCell", owner: self, options: nil)?.first as! WindTableViewCell
             cell.setUpCell(city!)
             return cell
-        } else if cellData[indexPath.row].cell == 3{
+         }else if cellData[indexPath.row].cell == 5{
             let cell = Bundle.main.loadNibNamed("FeltTemperatureTableViewCell", owner: self, options: nil)?.first as! FeltTemperatureTableViewCell
             cell.setUpCell(city!)
             return cell
-        } else if cellData[indexPath.row].cell == 4{
+        } else if cellData[indexPath.row].cell == 6{
             let cell = Bundle.main.loadNibNamed("WeekDayWeatherTableViewCell", owner: self, options: nil)?.first as! WeekDayWeatherTableViewCell
             cell.setUpCell(city!)
             return cell
@@ -66,14 +65,18 @@ extension ScrollViewSlide : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if cellData[indexPath.row].cell == 1{
-            return CGFloat(300)
+            return CGFloat(100)
         } else if cellData[indexPath.row].cell == 2{
+            return CGFloat(80)
+        }else if cellData[indexPath.row].cell == 3{
+            return CGFloat(80)
+        }else if cellData[indexPath.row].cell == 4{
             return CGFloat(70)
-        } else if cellData[indexPath.row].cell == 3{
+        }else if cellData[indexPath.row].cell == 5{
             return CGFloat(70)
-        } else if cellData[indexPath.row].cell == 4{
+        }else if cellData[indexPath.row].cell == 6{
             return CGFloat(260)
-        } else {
+        }else {
             return CGFloat(0)
         }
     }
