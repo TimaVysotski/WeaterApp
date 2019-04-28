@@ -7,43 +7,65 @@ import CoreLocation
 var cities = [City]()
 
 class CurrnetWeatherViewController : UIViewController{
-    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var scrollViewImageView: UIImageView!
-    
-    
-    var images : [String] = ["02db","01db"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpScrollView()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //fetchRequest()
-       // horizontalCollectionView.reloadData()
-    }
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle  {
         return .lightContent
     }
     
-    func setUpScrollView(){
-        scrollView.frame = view.frame
-        for index in 0..<images.count {
-            scrollViewImageView.image = UIImage(named: images[index])
-            scrollViewImageView.contentMode = .scaleAspectFit
-            let xPosition = self.view.frame.width * CGFloat(index)
-            scrollViewImageView.frame = CGRect(x: xPosition, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
-            scrollView.contentSize.width = scrollView.frame.width * CGFloat(index + 1)
-            
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRequest()
+        launchScrollView()
+    }
+    
+    @IBAction func menuButtonPressed(_ sender: UIButton) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "CitiesViewController") as! CitiesViewController
+        self.present(controller, animated: true, completion: nil)
     }
 }
 
-
+extension CurrnetWeatherViewController : UIScrollViewDelegate {
+    
+    func launchScrollView(){
+        let slides: [ScrollViewSlide] = createSlidesForScrollView()
+        setUpScrollViewSlides(slides)
+        pageControl.numberOfPages = slides.count
+    }
+    
+    func createSlidesForScrollView() -> [ScrollViewSlide]{
+        var slides = [ScrollViewSlide]()
+        for index in 0..<cities.count{
+            let slide : ScrollViewSlide = Bundle.main.loadNibNamed("ScrollViewSlideView", owner: self, options: nil)?.first as! ScrollViewSlide
+            slide.setUpScrollViewSlide(cities[index])
+            slides.append(slide)
+        }
+        return slides
+    }
+    
+    func setUpScrollViewSlides(_ slides : [ScrollViewSlide]){
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+        scrollView.isPagingEnabled = true
+        
+        for index in 0..<slides.count{
+            slides[index].frame = CGRect(x: view.frame.width * CGFloat(index), y: 0, width: view.frame.width, height: view.frame.height)
+            scrollView.addSubview(slides[index])
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
+        pageControl.currentPage = Int(pageIndex)
+    }
+    
+}
 
 // MARK -- CollectionView
 //
